@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NotebookLM Study Extractor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>NotebookLM <span>Study Extractor</span></h1>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <div id="no-data-msg" class="main-section">
+    <p>Aktif veri aranıyor...</p>
+  </div>
+
+  <div id="quiz-section" class="main-section hidden">
+    <div class="section-title">
+      <span>Test Soruları</span>
+      <span id="quiz-count" class="badge">0</span>
+    </div>
+    <div class="option-row">
+      <label class="toggle-container">
+        <input type="checkbox" id="includeQuizAnswers" checked>
+        <span class="toggle-label">Cevapları Dahil Et</span>
+      </label>
+    </div>
+    <div class="button-group">
+      <button id="extractQuizCsv" class="btn-primary">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Excel (CSV)
+      </button>
+      <button id="extractQuizWord" class="btn-secondary">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Word (.doc)
+      </button>
+    </div>
+  </div>
+
+  <div id="flashcard-section" class="main-section hidden">
+    <div class="section-title">
+      <span>Çalışma Kartları</span>
+      <span id="flash-count" class="badge">0</span>
+    </div>
+    <div class="option-row">
+      <label class="toggle-container">
+        <input type="checkbox" id="includeFlashAnswers" checked>
+        <span class="toggle-label">Cevapları Dahil Et</span>
+      </label>
+    </div>
+    <div class="button-group">
+      <button id="extractFlashCsv" class="btn-primary">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Excel (CSV)
+      </button>
+      <button id="extractFlashWord" class="btn-secondary">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Word (.doc)
+      </button>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <span class="status-dot"></span>
+    <span id="result">Sistem Hazır</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

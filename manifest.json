@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "NotebookLM Study Extractor",
+  "version": "1.0.0",
+  "description": "Export your NotebookLM study guide data (tests and flashcards) to Word and Excel in seconds.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://notebooklm.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://notebooklm.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ]
+}
